@@ -4,6 +4,8 @@ import { addStudentsData, getAllStudents, getStudentsById, updateStudentData,del
 const router=express.Router();
 router.get("/all",async (req,res)=>{
     try {
+       
+
         if(req.query.experience){
             req.query.experience= +req.query.experience;
         }
@@ -25,6 +27,7 @@ router.get("/all",async (req,res)=>{
 
 router.get("/:id",async(req,res)=>{
     try {
+       
         const{id}=req.params;
         const students=await getStudentsById(id);
         if(!students){
